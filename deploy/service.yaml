@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: generic-sidecar-injector
+  namespace: default
+  labels:
+    app: generic-sidecar-injector
+spec:
+  ports:
+    - port: 443
+      targetPort: 8443
+  selector:
+    app: generic-sidecar-injector

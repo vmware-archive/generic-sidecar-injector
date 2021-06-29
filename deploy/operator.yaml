@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: generic-sidecar-injector
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: generic-sidecar-injector
+  template:
+    metadata:
+      labels:
+        app: generic-sidecar-injector
+    spec:
+      serviceAccountName: generic-sidecar-injector
+      containers:
+        - name: generic-sidecar-injector
+          # Replace this with the built image name
+          image: localhost:5000/generic-sidecar-injector:v0.0.1-rc5
+          command:
+          - generic-sidecar-injector
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8443
+          env:
+            - name: WATCH_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: OPERATOR_NAME
+              value: "generic-sidecar-injector"
+          volumeMounts:
+            - name: certs
+              mountPath: /opt/generic-sidecar-injector/certs
+              readOnly: true
+      volumes:
+        - name: certs
+          secret:
+            secretName: generic-sidecar-injector-certs

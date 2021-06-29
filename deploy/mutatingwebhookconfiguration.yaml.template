@@ -1,0 +1,20 @@
+---
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: MutatingWebhookConfiguration
+metadata:
+  name: generic-sidecar-injector-webhook
+  labels:
+    app: generic-sidecar-injector
+webhooks:
+  - name: generic-sidecar-injector.default.svc
+    clientConfig:
+      service:
+        name: generic-sidecar-injector
+        namespace: default
+        path: "/mutate"
+      caBundle: {{ CA_BUNDLE }}
+    rules:
+      - operations: [ "CREATE" ]
+        apiGroups: [""]
+        apiVersions: ["v1"]
+        resources: ["pods"]

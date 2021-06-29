@@ -2,7 +2,7 @@
 # Edit at https://www.gitignore.io/?templates=go,macos,intellij
 
 ### Project Speficic ###
-deployment/mutatingwebhook-ca-bundle.yaml
+mutatingwebhook.yaml
 commitlint.config.js
 node_modules/
 package.json

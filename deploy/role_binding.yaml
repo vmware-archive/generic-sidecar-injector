@@ -1,0 +1,12 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: generic-sidecar-injector
+  namespace: default
+subjects:
+- kind: ServiceAccount
+  name: generic-sidecar-injector
+roleRef:
+  kind: Role
+  name: generic-sidecar-injector
+  apiGroup: rbac.authorization.k8s.io

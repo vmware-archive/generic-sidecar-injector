@@ -1,11 +1,9 @@
-
-
 # Contributing to generic-sidecar-injector
 
-The generic-sidecar-injector project team welcomes contributions from the community. Before you start working with generic-sidecar-injector, please
-read our [Developer Certificate of Origin](https://cla.vmware.com/dco). All contributions to this repository must be
-signed as described on that page. Your signature certifies that you wrote the patch or have the right to pass it on
-as an open-source patch.
+The generic-sidecar-injector project team welcomes contributions from the community. If you wish to contribute code
+and you have not signed our contributor license agreement ([CLA](https://cla.vmware.com/cla/1/preview)), our bot will
+update the issue when you open a Pull Request. For any questions about the CLA process, please refer to
+our [FAQ](https://cla.vmware.com/faq).
 
 ## Contribution Flow
 
@@ -67,8 +65,9 @@ notification when you git push.
 
 ### Formatting Commit Messages
 
-We follow the conventions on [How to Write a Git Commit Message](http://chris.beams.io/posts/git-commit/).
-We also chose a format influenced by [Angular commit message](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit-message-format).
+We follow the conventions on [How to Write a Git Commit Message](http://chris.beams.io/posts/git-commit/). We also chose
+a format influenced
+by [Angular commit message](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit-message-format).
 
 ```
 <type>: <subject>
@@ -79,6 +78,7 @@ We also chose a format influenced by [Angular commit message](https://github.com
 ```
 
 For example:
+
 ```
 refactor: Simplify serialize.h's exception handling
 
@@ -97,8 +97,10 @@ them.
 
 Resolves: #123
 ```
-<sub>Commit message taken from [Bitcoin Core](https://github.com/bitcoin/bitcoin/commit/eb0b56b19017ab5c16c745e6da39c53126924ed6)</sub>
-  
+
+<sub>Commit message taken
+from [Bitcoin Core](https://github.com/bitcoin/bitcoin/commit/eb0b56b19017ab5c16c745e6da39c53126924ed6)</sub>
+
 ### Type
 
 Must be one of the following:
@@ -113,12 +115,11 @@ Must be one of the following:
 * **style:** Changes that do not affect the meaning of the code
 * **test:** Adding missing tests or correcting existing tests
 
-We highly recommend the usage of 
+We highly recommend the usage of
 
-
-Be sure to include any related GitHub issue references in the commit message.  See
-[GFM syntax](https://guides.github.com/features/mastering-markdown/#GitHub-flavored-markdown) for referencing issues
-and commits.
+Be sure to include any related GitHub issue references in the commit message. See
+[GFM syntax](https://guides.github.com/features/mastering-markdown/#GitHub-flavored-markdown) for referencing issues and
+commits.
 
 ## Reporting Bugs and Creating Issues
 
